@@ -1,5 +1,10 @@
 package com.offcn.controller;
 
+import sun.net.util.IPAddressUtil;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -7,12 +12,12 @@ import java.util.Date;
  * @create 2020-12-20  21:17
  */
 public class PayController {
-    public static void main(String[] args) {
-        long time = new Date().getTime();
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i);
-        }
-        long time2 = new Date().getTime();
-        System.out.println(time2-time);
+    private static String hostIp;
+    private static String username;
+    public static void main(String[] args) throws UnknownHostException {
+        InetAddress localHost = InetAddress.getLocalHost();
+        hostIp = Arrays.toString(localHost.getAddress());
+        username = localHost.getHostName();
+        System.out.println("当前的主机ip地址为"+ hostIp+"主机的名称为"+username);
     }
 }
