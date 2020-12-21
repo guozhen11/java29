@@ -7,7 +7,6 @@ import java.util.Date;
  */
 public class PayController {
     public static void main(String[] args) {
-        System.out.println("我不是你爸爸");
         System.out.println("wokao");
         System.out.println("11111");
     }
